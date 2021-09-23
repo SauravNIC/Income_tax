@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<!-- external link pop up start-->
+		<link href="external-popup.css" rel="stylesheet">
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+		<!-- external link pop up end -->
+
+
+
+		<!-- Bootstrap CSS -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+			integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+			crossorigin="anonymous" />
+
+		<!--Scrolling-->
+		<link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+		<link href="https://www.cssscript.com/wp-includes/css/sticky.css" rel="stylesheet" type="text/css">
+		<!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" rel="stylesheet"
+		type="text/css"> -->
+		<!--Scrolling end-->
+		{% load static %}
+		<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}" />
+		<style>
+			a {
+				text-decoration: none;
+				color: black;
+			}
+
+		</style>
+
+		<title>Income Tax Department</title>
+
+		<script>
+			let a;
+			let date;
+			let time;
+			const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+			setInterval(() => {
+				a = new Date();
+				date = a.toLocaleDateString(undefined, options);
+				time = (a.getHours() % 12 || 12) + ':' + a.getMinutes() + ':' + a.getSeconds();
+				document.getElementById('time').innerHTML = date + " | " + time;
+			}, 1000);
+		</script>
+	</head>
+
+	<body>
+
+		<h1>Welcome {{request.user}} </h1>
+		<a href="/logout">logout</a>
+
+		<!-- Option 1: Bootstrap Bundle with Popper -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+			crossorigin="anonymous"></script>
+		<script src="{% static 'javascript/bootstrap.bundle.js' %}"></script>
+		<script src="{% static 'javascript/bootstrap.bundle.min.js' %}"></script>
+		<script src="{% static 'javascript/bootstrap.js' %}"></script>
+		<script src="{% static 'javascript/bootstrap.min.js' %}"></script>
+
+		<div class="top-header">
+			<div class="row">
+
+				<div class="col-12" style="color:white;">
+
+					<nav
+						class="navbar navbar-expand-xl navbar-expand-md bg-dark navbar-dark text-white py-0 px-3 d-flex">
+						<button class="navbar-toggler" data-target="#topHeaderNav" data-toggle="collapse" type="button">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+
+						<div class="collapse navbar-collapse" id="topHeaderNav">
+							<ul class="navbar-nav ml-auto align-items-center font-12">
+								<li class="nav-item"><a class="nav-link active opacity-1 font-12 skip-cont"
+										href="#main_start" style="color:white;
+									 /* font-size: 15px; */
+									 ">
+										Skip to main content
+									</a></li>
+								<!-- <li class="nav-item" style="color:white; ">
+								<a class="nav-link active opacity-1 font-12 cmsMenuNavigate" data-cat-id="201"
+									data-tmplt-id="382" href="javascript:;" style="font-size: 15px;">
+									<img src="images/img/accessbility.png" alt="Screen Reader Access"
+										class="screen-render" title="Screen Reader Access" height="15" width="15"
+										style="color:white; "> |
+								</a>
+							</li> -->
+								<li class="nav-item"><a class="nav-link active opacity-1 font-12 cmsMenuNavigate"
+										data-cat-id="201" data-tmplt-id="298" href="javascript:;" style="color:white; 
+									/* font-size: 15px; */
+									">
+										Sitemap |
+									</a></li>
+								<li class="nav-item"><a class="nav-link active opacity-1 font-14 font-weight-semi-bold"
+										id="fontDecrease" href="javascript:;" style="color:white; 
+									/* font-size: 15px; */
+									">A-</a>
+								</li>
+								<li class="nav-item"><a class="nav-link active opacity-1 font-14 font-weight-semi-bold"
+										id="fontOrig" href="javascript:;" style="color:white; 
+									/* font-size: 15px; */
+									">A</a></li>
+								<li class="nav-item"><a class="nav-link active opacity-1 font-14 font-weight-semi-bold"
+										id="fontIncrease" href="javascript:;" style="color:white; 
+									/* font-size: 15px; */
+									">A+ |</a>
+								</li>
+								<li class="nav-item d-flex"><a class="nav-link active opacity-1"
+										href="tel:1800-572-1550"> <span class="font-12 pr-1" style="color:white; 
+										/* font-size: 15px; */
+										"> Helpline
+										</span> <span class="d-none" style="color:white; ">1800 180 1961</span>
+									</a> <a class="nav-link active opacity-1 font-14 pr-1" href="tel:1800-111-550"
+										style="color:white; font-size: 16px;"><span>1800 180 1961</span> |</a></li>
+								<li class="nav-item"><a class="nav-link active opacity-1 font-14 font-weight-semi-bold"
+										id="fontIncrease" href="javascript:;" style="color:white;
+									/* font-size: 13px; */
+									">Switch to
+										Dark Mode |</a>
+								</li>
+								<li class="nav-item"><a class="nav-link active opacity-1 font-12 open-ask-vahei"
+										href="javascript:;" style="color:white; 
+									/* font-size: 13px; */
+									"> Ask
+										VAHEI |
+									</a></li>
+							</ul>
+							<div class="language_dropdown" /* font-size: 13px; */>
+								<select id="langSelect" class="bg-transparent font-12 border-0 text-white"
+									onchange="langChange('langSelect');">
+
+									<option value="en_US" selected="selected" class="text-dark">
+										English
+									</option>
+									<option value="hi" class="text-dark" style="font-size: 13px;">हिन्दी</option>
+								</select>
+							</div>
+
+						</div>
+						<span id="time" style="color: rgb(236, 236, 231);"></span>
+					</nav>
+				</div>
+			</div>
+		</div>
+
+		<img src="{% static 'images/header.png' %}" class="img-fluid" alt="..." />
+		<div class="body1">
+			<nav class="navbar navbar-expand-lg navbar-dark nav_new">
+				<div class="container-fluid">
+					<a class="navbar home" href="index.html"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+							height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"
+							stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
+							<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+							<polyline points="9 22 9 12 15 12 15 22"></polyline>
+						</svg> Home</a>
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+						aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarText">
+						<ul class=" navbar-nav me-auto mb-2 mb-lg-0">
+							<li class="nav-item">
+								<a class="nav-link active active" aria-current="page" href="about.html">About Us</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link active active" href="media.html">Media Center</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link active active" href="downloads.html">Downloads</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link active active" href="holiday_list.html">Holidays List</a>
+							</li>
+
+							<ul class="navbar-nav">
+								<li class="nav-item dropdown">
+									<a class="nav-link active dropdown-toggle active" href="#"
+										id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+										aria-expanded="false">
+										Office Orders
+									</a>
+									<ul class="dropdown-menu dropdown-menu"
+										aria-labelledby="navbarDarkDropdownMenuLink">
+										<li><a class="dropdown-item" href="#">Transfer Policy</a></li>
+										<li><a class="dropdown-item" href="#">Transfer Posting & Promotions</a></li>
+										<li><a class="dropdown-item" href="#">DPC / ACR Matters</a></li>
+										<li><a class="dropdown-item" href="#">Vacancy Circular</a></li>
+										<li><a class="dropdown-item" href="#">Training Oppointment</a></li>
+										<li><a class="dropdown-item" href="#">Circular / Notification</a></li>
+										<li><a class="dropdown-item" href="#">Cadre Review Matters</a></li>
+										<li><a class="dropdown-item" href="#">Misc. Notification</a></li>
+									</ul>
+								</li>
+							</ul>
+
+							<li class="nav-item">
+								<a class="nav-link active active" href="tenders.html">Tenders</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link active active" href="faqs.html">FAQs</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link active active" href="location.html">Location Map</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link active active" href="contact.html">Contact Us</a>
+							</li>
+							<!-- <li class="nav-item">
+							<a class="nav-link active" href="contact.html">RTI</a>
+						</li> -->
+							<ul class="navbar-nav">
+								<li class="nav-item dropdown">
+									<a class="nav-link active dropdown-toggle active" href="#"
+										id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+										aria-expanded="false">
+										RTI
+									</a>
+									<ul class="dropdown-menu dropdown-menu"
+										aria-labelledby="navbarDarkDropdownMenuLink">
+										<li><a class="dropdown-item" href="#">RTI Fees </a></li>
+										<li><a class="dropdown-item" href="#">RTI Portal</a></li>
+										<li><a class="dropdown-item" href="#">RTI - Proactive Disclosure </a></li>
+										<hr>
+										<li><a class="dropdown-item" href="#">RTI - Complete Information </a></li>
+
+									</ul>
+								</li>
+							</ul>
+							<li class="nav-item">
+								<a class="nav-link active active" href="/feedback">Feedback</a>
+							</li>
+						</ul>
+						<span class="navbar-text" id="nav-span">
+							<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+								<li class="nav-item ">
+									<a class="nav-link active active " aria-current="page" href="login">
+										<button type="button" class="btn btn-outline-primary bt-login  ">Login</button>
+									</a>
+								</li>
+							</ul>
+						</span>
+					</div>
+				</div>
+			</nav>
+			<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+				<div class="carousel-indicators">
+					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+						class="active" aria-current="true" aria-label="Slide 1"></button>
+					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+						aria-label="Slide 2"></button>
+					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+						aria-label="Slide 3"></button>
+					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+						aria-label="Slide 4"></button>
+				</div>
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<img src="{% static 'images/amrit.jpg' %}" class="d-block w-100" alt="...">
+					</div>
+					<div class="carousel-item">
+						<img src="{% static 'images/1n.png' %}" class="d-block w-100" alt="...">
+					</div>
+					<div class="carousel-item">
+						<img src="{% static 'images/2n.png' %}" class="d-block w-100" alt="...">
+					</div>
+					<div class="carousel-item">
+						<img src="{% static 'images/3n.png' %}" class="d-block w-100" alt="...">
+					</div>
+				</div>
+				<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+					data-bs-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Previous</span>
+				</button>
+				<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+					data-bs-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Next</span>
+				</button>
+			</div>
+
+
+			<div class="container-fluid main">
+				<div class="row"
+					style="background-color:rgb(74, 132, 187); margin-bottom: 3px; text-align: center; line-height: 35px; font-size: 22px;">
+					<div class="col-lg-1 col-sm-2" style="color: cadetblue; background-color: darkblue; color: white;"
+						id="main_start">
+						Latest
+					</div>
+					<div class="col-lg-11 col-sm-8">
+
+						<marquee width="100%" scrollamount="5" behaviour="scrol" onmouseover="this.stop();"
+							onmouseout="this.start();">
+							<a href="" style="color: white;"> Tender for hiring of operational vehicle for O/o Pr. CIT
+								(ReFAC)(AU)-3, Hyderabad</a>
+						</marquee>
+					</div>
+				</div>
+
+
+				<div class="row">
+					<div class="col-lg-3 col-xs-12 left">
+						<ul class="list-group">
+							<li class="list-group-item" style="background-color:#0f5ea5; color:white;">
+								<center>General Links</center>
+							</li>
+							<li class="list-group-item LC Lcolor"  ><a target="" href="#">Organization Setup
+								</a></li>
+							<li class="list-group-item LC Lcolor"><a href="directory.html">Telephone Directory</a>
+							</li>
+							<li class="list-group-item LC Lcolor"  ><a target="" href="#">Performance</a></li>
+							<li class="list-group-item LC Lcolor"  ><a href="#">Announcements</a>
+							</li>
+							<li class="list-group-item LC Lcolor"  ><a href="#">Public Notices
+								</a></li>
+							<li class="list-group-item LC Lcolor"  ><a target="" href="publicgrievance.html">Public
+									Grievances</a>
+							</li>
+							<li class="list-group-item LC Lcolor"  ><a href="#">Covid-19 Information</a>
+							</li>
+							<li class="list-group-item LC Lcolor"><a href="Jurisdiction.html">Jurisdiction</a>
+							</li>
+
+							<li class="list-group-item LC Lcolor"><a target="_blank" href="#">IT Acts 1961</a>
+							</li>
+
+						</ul>
+					</div>
+					<div class="col-lg-9 col-xs-12 right">
+						<div class="container-fluid WN-H">
+							What's New
+						</div>
+						<div class="container-fluid WN-B" style="padding-left: 0px;
+					padding-right: 0px;">
+							<ul class="data-list" data-autoscroll style=" padding: 0px 0px 0px 0px;">
+								<li style="line-height: 30px; background-color: rgb(184, 191, 221);"><a href="">
+										Declaration
+										of
+										Probation and Confirmation of Tax
+										Assistants- Corrigendum to Order dated 24.08.2021 - reg.
+										ipsum dolor sit amet, consectetur adipis.</a> </li>
+								<li style="line-height: 30px; background-color: hsl(34, 26%, 95%); "><a href="">
+										Cancellation of tender dt. 19.08.2021 invited for
+										hiring of operational vehicle for the charge of Pr. CIT (ReFAC)(AU)-3, Hyderabad
+										ipsum dolor sit amet, consectetur adipis.</a> </li>
+								<li style="line-height: 30px; background-color: rgb(184, 191, 221);"><a href="">
+										Extension
+										of COVID
+										Support Groups / Committee for
+										employees of the Department
+										ipsum dolor sit amet, consectetur adipis.</a> </li>
+								<li style="line-height: 30px; background-color: hsl(34, 26%, 95%);"><a
+										href="">Declaration
+										of Probation and Confirmation of Tax
+										Assistants(TA)-reg.(24/08/2021)
+										ipsum dolor sit amet, consectetur adipis.</a> </li>
+								<li style="line-height: 30px; background-color: rgb(184, 191, 221);"><a href=""> APAR
+										Submission to the
+										Reporting Officers-
+										Marking a copy to the Vigilance Section of Pr.CCIT- Instructions for submission
+										of
+										application for no APAR Certificate by the officials-reg.</a></li>
+								<li style="line-height: 30px; background-color: hsl(34, 26%, 95%);"><a href=""> Transfer
+										Policy for Group B(Gazetted) Officers of
+										Income Tax Department, AP & TS Region-reg.</a> </li>
+								<li style="line-height: 30px; background-color: rgb(184, 191, 221);"><a href=""> Filing
+										of
+										APARs for the
+										Reporting Year 2020-21
+										and Reporting Year 2021-22 on SPARROW Portal-reg.(23/08/2021)</a></li>
+								<li style="line-height: 30px; background-color: hsl(34, 26%, 95%);"><a href=""> Circular
+										regarding Filing of APARs for the
+										Reporting Year 2020-21 and Reporting year 2021-22 on SPARROW Portal to the
+										Reporting
+										Officer Sri J.B Mohapatra, the then Pr.CCIT, AP & TS, Hyderabad.</a></li>
+								<li style="line-height: 30px; background-color: rgb(184, 191, 221);"><a href="">
+										Circular
+										regarding
+										Organization of Hindi
+										Fortnight-reg.</a></li>
+								<li style="line-height: 30px; background-color: hsl(34, 26%, 95%);"><a href=""> Tender
+										for
+										hiring of operational vehicle for O/o
+										Pr. CIT (ReFAC)(AU)-3, Hyderabad</a> </li>
+								<li style="line-height: 30px; background-color: rgb(204, 209, 233);"><a href="">Transfer
+										Policy for
+										Group B(Non-Gazetted) & Group
+										C Officials (Other than Staff Car Drivers) of Income Tax Department, AP & TS
+										Region-reg.</a></li>
+								<li style="line-height: 30px; background-color: hsl(34, 26%, 95%);"><a href="">L
+										Promotion
+										to the cadre of Administrative Officer
+										(Grade-III) (Group B Gazetted)- Allotment - Reg</a></li>
+							</ul>
+						</div>
+						<div class="body_footer"><a href="archieve.html"> Archive>> </a></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-3 col-xs-12" style="padding: 6px 6px 0px 25px;">
+					<!-- <div class="row"> -->
+					<!-- <div class="col-lg-12 col-xs-12 left"> -->
+					<ul class="list-group">
+						<li class="list-group-item" style="background-color:#0f5ea5; color:white;">
+							<center>Other Links</center>
+						</li>
+						<li class="list-group-item LC Lcolor"  ><a href="publications.html">Publications
+							</a></li>
+						<li class="list-group-item LC Lcolor"  ><a target="" href="establishment.html">Establishment</a>
+						</li>
+						<li class="list-group-item LC Lcolor"><a href="#">Citizens Chatter</a></li>
+						<li class="list-group-item LC Lcolor"  ><a target="" href="holiday_list.html">Miscellaneous
+								Matters</a>
+						</li>
+
+						<li class="list-group-item LC Lcolor"  ><a href="events_speechs.html">Events / Speeches</a></li>
+						<li class="list-group-item LC Lcolor"  ><a target="" href="history.html">History</a></li>
+
+						<li class="list-group-item LC Lcolor"><a target="" href="#">Who's who</a>
+						</li>
+					</ul>
+
+
+				</div>
+				<div class="col-lg-9 col-xs-12" style="padding: 0px 4px 0px 0px;
+			margin: 0px 0px 0px -4px;
+			">
+					<div class="container-fluid social-media">
+						<div class="row">
+							<div class="col-lg-4 col-sm-12 youtube">
+								<div class="yhead">
+									Youtube
+								</div>
+								<div class="ybody">
+									<iframe width="100%" height="275px" src="https://www.youtube.com/embed/_gXTQa7eli8"
+										title="YouTube video player" frameborder="0"
+										allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+										allowfullscreen></iframe>
+								</div>
+							</div>
+
+							<!-- <div class="col-lg-3 col-sm-12 maps">
+							<div class="mhead">
+								MAPS
+							</div>
+							<div class="mbody">
+								<iframe
+									src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.0802875283866!2d78.47231561449388!3d17.407934206795094!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9712e9a4099b%3A0xbe87c1ea4e037d2f!2sNIC%20Telangana!5e0!3m2!1sen!2sin!4v1629268452419!5m2!1sen!2sin"
+									width="100%" height="400px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+							</div>
+						</div> -->
+
+							<div class="col-lg-4 col-sm-12 twitter">
+								<div class="thead">
+									Twitter
+								</div>
+								<div class="tbody">
+									<a class="twitter-timeline" data-width="100%" data-height="275px"
+										href="https://twitter.com/IncomeTaxIndia?ref_src=twsrc%5Etfw">Tweets by
+										IncomeTaxIndia</a>
+									<script async src="https://platform.twitter.com/widgets.js" charset="utf-8">
+									</script>
+								</div>
+
+							</div>
+
+							<div class="col-lg-4 col-sm-12 facebook">
+								<div class="fhead">
+									Facebook
+								</div>
+								<div class="fbody">
+									<iframe
+										src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fincometaxindiaofficial%2F&tabs=timeline&width=340&height=500&small_header=true&adapt_container_width=false&hide_cover=true&show_facepile=false&appId"
+										width="" height="275px" scrolling="yes" frameborder="0" allowfullscreen="true"
+										allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+									</iframe>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- external sites -->
+
+
+			<div class="row container-fluid">
+				<hr>
+				<div class="col-1">
+				</div>
+				<div class="col-2">
+					<a href="https://www.incredibleindia.org/content/incredible-india-v2/en.html" target='_blank'>
+						<img src="{% static 'images/footerScroll/f1 2.png' %}" alt="">
+					</a>
+				</div>
+				<div class="col-2">
+					<a href="https://data.gov.in" target='_blank'>
+						<img src="{% static 'images/footerScroll/f1 3.png' %}" alt="">
+					</a>
+				</div>
+				<div class="col-2">
+					<a href="https://www.mygov.in" target='_blank'>
+						<img src="{% static 'images/footerScroll/f1 4.png' %}" alt="">
+					</a>
+				</div>
+				<div class="col-2">
+					<a href="https://www.gst.gov.in">
+						<img src="{% static 'images/footerScroll/f1.png' %}" alt="">
+					</a>
+				</div>
+				<div class="col-2">
+					<a href="https://goidirectory.gov.in">
+						<img src="{% static 'images/footerScroll/f2 1.png' %}" alt="">
+					</a>
+				</div>
+				<div class="col-1">
+				</div>
+				<hr>
+				<div class="col-2">
+
+				</div>
+				<div class="col-2">
+					<a href="https://pmnrf.gov.in/en/">
+						<img src="{% static 'images/footerScroll/f2 3.png' %}" alt="">
+					</a>
+				</div>
+				<div class="col-2">
+					<a href="https://www.makeinindia.com/">
+						<img src="{% static 'images/footerScroll/f2.png' %}" alt="">
+					</a>
+				</div>
+				<div class="col-2">
+					<a href="https://www.india.gov.in/">
+						<img src="{% static 'images/footerScroll/f2 5.png' %}" alt="">
+					</a>
+				</div>
+				<div class="col-2">
+					<a href="https://www.kvic.gov.in/">
+						<img src="{% static 'images/footerScroll/f3.png' %}" alt="">
+					</a>
+				</div>
+				<!-- <div class="col-1">
+				<img src="images/footerScroll/f2 5.png" alt="">
+			</div> -->
+
+				<!-- <div class="col-1">
+				<img src="images/footerScroll/f1.png" alt="">
+			</div> -->
+				<div class="col-1">
+				</div>
+				<hr>
+			</div>
+
+
+			<!-- Footer -->
+			<footer class="page-footer font-small blue ">
+				<!-- Copyright -->
+
+				<div class="container-fluid row footer-row">
+					<hr>
+					<div class="col-3 footer-heading">
+						ABOUT US
+						<hr>
+						<ul style="list-style-type: none; margin: 0;padding: 0;">
+							<li>
+								<a href=" " class="footer-link">
+									Organization Structure
+								</a>
+							</li>
+							<li>
+								<a href="" class="footer-link"> HQ Contact </a>
+							</li>
+							<li>
+								<a href="" class="footer-link"> RA Contact </a>
+							</li>
+							<li>
+								<a href="" class="footer-link"> Citizen Charter </a>
+							</li>
+							<li>
+								<a href="" class="footer-link"> Complaints/ Suggestions/ Feedback </a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-3 footer-heading">
+
+						Related Websites
+						<hr>
+						<ul style="list-style-type: none; margin: 0;padding: 0;">
+							<li><a href="#"> Income Tax India</a></li>
+							<li><a href="https://www.tdscpc.gov.in/app/login.xhtml" class="footer-link"> TDS Traces </a>
+							</li>
+							<li><a href="https://www.tin-nsdl.com/" class="footer-link"> NSDL</a></li>
+						</ul>
+					</div>
+
+					<div class="col-2 footer-heading">
+
+						Learn
+						<hr>
+						<ul style="list-style-type: none; margin: 0;padding: 0;">
+							<li><a href=""> Fill ITR</a></li>
+							<li><a href=""> Tax Report</a></li>
+							<li><a href=""> Website Policies</a></li>
+						</ul>
+					</div>
+
+					<div class="col-2 footer-heading">
+
+						Contact Us
+						<hr>
+						<ul style="list-style-type: none; margin: 0;padding: 0;">
+							<li><a href=""> Grievance</a></li>
+							<li><a href=""> Helpline Number</a></li>
+							<li><a href=""> View Grievance</a></li>
+							<li><a href=""> Feedback</a></li>
+							<li>
+							</li>
+						</ul>
+					</div>
+
+					<div class="col-2">
+						<br>
+						<a href="https://www.facebook.com" target="_blank">
+							<img src="{% static 'images/social_icons/facebook.png' %}" alt="Facebook" height="30px"
+								width="30px" style="border-radius: 40px; background-color: white;">
+						</a>
+						|
+						<a
+							href="https://twitter.com/IncomeTaxIndia?ref_src=twsrc%5Etfw%7Ctwcamp%5Eembeddedtimeline%7Ctwterm%5Eprofile%3AIncomeTaxIndia%7Ctwgr%5EeyJ0ZndfZXhwZXJpbWVudHNfY29va2llX2V4cGlyYXRpb24iOnsiYnVja2V0IjoxMjA5NjAwLCJ2ZXJzaW9uIjpudWxsfSwidGZ3X2hvcml6b25fdHdlZXRfZW1iZWRfOTU1NSI6eyJidWNrZXQiOiJodGUiLCJ2ZXJzaW9uIjpudWxsfSwidGZ3X3NwYWNlX2NhcmQiOnsiYnVja2V0Ijoib2ZmIiwidmVyc2lvbiI6bnVsbH19&ref_url=http%3A%2F%2F127.0.0.1%3A5500%2Findex.html">
+							<img src="{% static 'images/social_icons/twitter.png' %}" alt="Twitter" height="30px"
+								width="30px" style="border-radius: 40px;" alt="">
+						</a>
+						|
+
+						<a href="fb.com"> <img src="{% static 'images/social_icons/youtube.png' %}" height="30px"
+								width="30px" style="border-radius: 40px;" alt=""> </a>
+
+
+					</div>
+					<!-- <div class="col-2">
+					MISCELLANEOUS
+				</div>
+				<div class="col-2">
+					CONTACT US
+				</div> -->
+					<!-- </div> -->
+					<div class="container-fluid" style="background-color:#0f5ea5; color: azure;  text-align: center;">
+						<br>
+						&copy; 2021 Copyright: NIC Hyderabad <br>
+						Last reviewd and updated: 1-Sep-2021
+						<p style="text-align: center;">
+							<a href="" style="color: white;">
+							</a>
+						</p>
+						<p style="text-align: center;">
+
+						</p>
+					</div>
+				</div>
+
+				<!-- Copyright -->
+			</footer>
+			<!-- Footer -->
+		</div>
+
+
+		<!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet"> -->
+
+
+		<!-- <div class="container">
+		<div class="row mt-5">
+			<div class="col-sm-12">
+				<p class="text-center">
+					<a href="https://www.solodev.com" class="btn btn-info btn-lg cta-open">External Link</a> 
+				</p>
+			</div>
+		</div>
+	</div> -->
+
+		<!---AUTO SCROLLING-->
+		<script src="https://code.jquery.com/jquery-1.12.4.min.js"
+			integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
+			crossorigin="anonymous"></script>
+		<script src="javascript/jquery.autoscroll.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-36251023-1']);
+			_gaq.push(['_setDomainName', 'jqueryscript.net']);
+			_gaq.push(['_trackPageview']);
+
+			(function () {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+
+		</script>
+		<script>
+			try {
+				fetch(new Request("https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js", { method: 'HEAD', mode: 'no-cors' })).then(function (response) {
+					return true;
+				}).catch(function (e) {
+					var carbonScript = document.createElement("script");
+					carbonScript.src = "//cdn.carbonads.com/carbon.js?serve=CK7DKKQU&placement=wwwjqueryscriptnet";
+					carbonScript.id = "_carbonads_js";
+					document.getElementById("carbon-block").appendChild(carbonScript);
+				});
+			} catch (error) {
+				console.log(error);
+			}
+		</script>
+		<!--AUTO SCROLING ENDS HERE-->
+	</body>
+
+</html>

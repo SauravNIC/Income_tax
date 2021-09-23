@@ -1,0 +1,271 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+
+/* .top-header nav{
+	background-color:#a04c64 !important;
+	border: 2px solid red;
+	color: honeydew;
+} */
+
+.nav_new{
+	background-color: #0f5ea5;
+}
+
+
+#nav-span {
+	padding: 0px 4px 0px 4px;
+	margin: -13px 0px -12px 0px;
+}
+
+.main {
+	/* border: solid 1px red; */
+	margin: 4px 0px 0px 0px;
+
+}
+
+.left {
+	/* border: solid 1px yellowgreen; */
+	margin: 0px 0px 0px 0px;
+	padding-top: 3px;
+}
+
+.right {
+	padding: 3px 12px 0px 5px;
+}
+
+.bt-login {
+	color: white;
+	border: 1px solid white;
+	border-radius: 5px;
+}
+
+.social-media {
+	/* border: 4px solid black; */
+	margin-top: 2px;
+	background-color: #f5f6f7;
+}
+
+.facebook,
+.youtube,
+.twitter,
+.maps {
+	margin: 0px;
+	padding: 4px 4px 4px 4px;
+	text-align: center;
+}
+
+.thead,
+.yhead,
+.fhead,
+.mhead {
+	background-color: #0f5ea5;
+	color: white;
+	border-radius: 4px;
+	border: 6px solid #0f5ea5;
+	padding: 0px;
+	margin: 0px 0px 1px 0px;
+}
+
+.fbody:hover,
+.ybody:hover,
+.tbody:hover,
+.mbody:hover {
+	background-color: rgb(216, 210, 230);
+}
+
+.tbody {
+	padding: 3px 20px 0px 20px;
+}
+
+.tc {
+	text-align: center;
+}
+
+.LC {
+	text-align: center;
+	text-decoration: none;
+	/* background-color:rgb(188, 212, 248); */
+
+}
+
+.LC:hover {
+	color: #fff;
+
+}
+
+LC a:hover{
+	color: white;
+}
+
+.Lcolor:hover {
+
+	background-color: rgb(74, 132, 187);
+	color: white;
+}
+
+
+
+.fbody {
+	padding: 0px -4px 0px -5px;
+}
+
+
+
+
+.body1 {
+	position: relative;
+}
+
+
+.WN-H {
+	background-color: #0f5ea5;
+	text-align: center;
+	padding: 9px 0px 9px 0px;
+	border-radius: 6px 6px 0px 0px;
+	color: lightcyan;
+}
+
+.WN-B {
+	/* background-color: rgb(87, 78, 128); */
+	margin-top: 2px;
+	text-align: justify;
+	border: 2px solid black;
+	border-top: none;
+	border-bottom: none;
+	border-radius: 0px 0px 0px 0px;
+	line-height: 25px;
+	padding: 0px 2px 2px 2px;
+	height: 330px;
+	overflow: scroll;
+	/* color: lightcyan; */
+}
+
+.body_footer {
+	border-radius: 0px 0px 6px 6px;
+	border: 2px solid black;
+	border-top: none;
+	background-color: rgb(184, 191, 221);;
+	text-align: right;
+	text-decoration: none;
+	font-size: x-large;
+}
+
+.footer-row {
+	background-color: #e5e5e5;
+	color:black;
+}
+
+/* AUTO SCROLLBAR HIDE */
+.hide-scrollbar::-webkit-scrollbar {
+	display: none;
+}
+
+.data-list {
+	height: 100%;
+	width: 100%;
+	padding: 2rem;
+	overflow-y: hidden;
+	/* border: 2px solid #222; */
+	border-radius: 5px;
+}
+
+.page-footer ul li a {
+	color:black;
+	text-decoration: none;
+	font-size: 12px;
+	line-height: 4vh;
+}
+
+/* AUTO SCROLLBAR HIDE ENDS HERE */
+
+.loginc {
+	background-color: #eeeeee;
+	margin: 30px 0px 30px 0px;
+	color: rgb(3, 3, 3);
+	padding: 20px 0px 22px 0px;
+	border-radius: 8px 8px 8px 8px;
+}
+
+
+/* Collapse FAQs starts*/
+
+.collapsible {
+	cursor: pointer;
+	padding: 6px;
+	width: 100%;
+	/* border: 2px solid black; */
+	text-align: left;
+	outline: none;
+	font-size: 20px;
+  }
+  
+  .faq_questions{
+	margin: 2px 0px;
+	border-radius: 0px 0px;
+	background-color: #e2f3fd;
+}
+
+.active_new{
+	background-color:#f8992d ;
+	border: 0px solid white;
+	border-radius: 6px;
+}
+  
+.collapsible:hover {
+	background-color:#f1a956 ;
+  }
+  
+  .content {
+	padding: 2px 18px;
+	text-align: justify;
+	line-height: 25px;
+	display: none;
+	overflow: hidden;
+	border: 1px solid black;
+	border-radius: 0px 0px;
+	border-top: 0px;
+	background-color: rgb(232, 234, 240);;
+	/* background-color: #e2dfdf; */
+  }
+
+  /* Collapse FAQs ends  */
+.footer-heading{
+	line-height: 30px; font-size: 22px;
+}
+
+.faq_button{
+	float:inline;
+	padding: 15px;
+	background-color: rgb(188, 212, 248);
+	border: 2px solid black;
+	border-radius: 6px;
+	margin: 15px;
+}
+
+
+.faq_button:hover{
+	background-color: burlywood;
+}
+
+.heading{
+	color: white;
+	font-size: 20px;
+	padding: 15px 0px;
+	background-color: rgb(67, 124, 189);
+	text-align: center;
+
+}
+
+
+.home{
+	color: white;
+	text-decoration: none;
+}
+
+.home:hover{
+	color: white;
+	text-decoration: none;
+}
